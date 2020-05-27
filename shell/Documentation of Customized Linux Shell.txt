@@ -1,0 +1,47 @@
+Documentation of Customized Linux Shell
+
+Shell starts by welcoming the user and at every prompt tells us that you are working at what directory.
+Shell supports 5 internal commands that are:-
+	1). echo , and  echo -n 
+	2). cd  , and has all the options available for cd.(cd .. , cd ../.. , cd Dir1/Dir2).
+	3). pwd 
+	4). history 
+	5). exit
+
+Shell also supports various external commands including:-
+	1). ls , and has all the options for ls available(including ls- a,ls -r,ls -h)
+	2). mkdir ,and has 2 options available(including mkdir -v)
+	3). rm , and has 2 options available(including rm -v ,rm -i) 
+	4). date and has 2 options (date -R , date -u)
+	5). cat and has 2 options available (including cat -n and cat -t)
+
+Shell also has all the man pages.
+When exit is commanded , the shell greets the user and exits(going back to terminal)
+
+
+Corner Cases
+	1). Echo can have a lot of spaces in between 2 inverted commas , so I consider all the spaces.
+	2). In case of input a person can put a lot of spaces between 2 options such as (date        -R) but it will be considered as (date -R)
+	3). In case a person writes 2 arguements together such as (date -Ru) or if he writes them seperately (date -R -u) , the shell will treat them the same.
+
+Assumptions
+	1).For external commands my shell takes only 2 options at a time.
+	2).echo only has 1 option that I gave which is echo -n which cuts the extra line.
+	3). Commands such as pwd , history and exit which don't require any option , don't have one.
+
+Testcases
+Open using ./a.out
+echo "    Vishesh      Agrawal"
+echo -n "Hello "
+date -R -u
+pwd
+cd
+mkdir -v viss 
+ls    -ar
+touch van.txt
+cat van.txt
+cat -n van.txt
+rm -vi van.txt
+ls
+history
+exit
